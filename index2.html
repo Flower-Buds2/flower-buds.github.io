@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flower Buds 2</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    </head>
+    <body>
+        <div class="header">
+            <div class="center">
+                <img src="img/logo.png" alt="Flower Buds logo">
+                <h1>flower buds</h1>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div id="topics"></div>
+
+        <script>
+            myTopics = [{
+                    id: "topic1",
+                    topic: "Online",
+                    description: "Online communities refer to groups of people who interact with one another primarily through digital platforms such as social media, forums, or messaging apps. These communities may be formed around a variety of interests, including hobbies, professions, political affiliations, or personal identities.",
+                    expand1: "Online communities can offer a range of benefits for individuals, including the ability to connect with others who share their interests or experiences, access information or resources, and participate in discussions or activities that align with their values.",
+                    expand2: "Online communities may also provide a sense of belonging and social support, particularly for individuals who may feel isolated or marginalized in their offline lives. They may offer opportunities for members to exchange knowledge, provide emotional support, or collaborate on projects or initiatives.",
+                    expand3: "However, online communities may also present challenges related to misinformation, online harassment, and the spread of extremist ideologies. They may also be vulnerable to infiltration by malicious actors, such as bots or trolls, who seek to disrupt or manipulate the group's activities.",
+                    src: "online.png",
+                    alt: "People sitting and standing around a computer with white icons around it on a blue background",
+                    q1: "What kind of community do you participate in where you can interact with others who share your interests?",
+                    q2: "Are there any communities you've joined that allow you to connect with people from all around the world?",
+                    q3: "Have you ever been part of a group where members can anonymously post their thoughts and feelings?",
+                    q4: "Have you ever joined a community where people share their creative work?",
+                    q5: "Are there any communities you're part of that revolve around a specific type of content, like videos, images, or writing?",
+                    q6: "Have you ever joined a community where members can ask and answer questions on a particular topic?",
+                    q7: "Are there any communities you're part of that regularly organize events or meetups?",
+                    q8: "Have you ever joined a community that provides a platform for people to support each other through difficult times?",
+                    q9: "Are there any communities you've joined that revolve around a particular product or brand?",
+                    q10: "Have you ever been part of a community where members can exchange goods or services with each other?"
+                }, {
+                    id: "topic2",
+                    topic: "Lifestyle",
+                    description: "Lifestyle communities refer to groups of people who share a common interest or lifestyle choice, such as health and wellness, sustainability, or outdoor recreation. These communities may be formed around a specific activity or hobby, or they may be more broadly focused on promoting a particular way of living or set of values.",
+                    expand1: "Lifestyle communities can provide opportunities for individuals to connect with others who share their interests, values, and goals. They may offer access to resources, events, and activities that promote healthy, sustainable, or fulfilling lifestyles, and they may also provide a sense of belonging and social support.",
+                    expand2: "Some examples of lifestyle communities include fitness groups, organic farming cooperatives, and intentional living communities. Members of these communities may collaborate on projects, share resources and knowledge, or advocate for policies and practices that align with their values.",
+                    expand3: "Lifestyle communities may also play a role in promoting social and environmental change, by raising awareness and advocating for issues related to health, sustainability, or social justice. They may leverage the power of collective action and community building to effect positive change in their local communities and beyond.",
+                    src: "lifestyle.png",
+                    alt: "Multiple images of people doing different activities",
+                    q1: "Have you ever heard of a community where people live off the grid? What do you think that means?",
+                    q2: "What are your thoughts on a community that prioritizes sustainability and eco-friendliness?",
+                    q3: "Have you ever heard of a community where people practice intentional living? What do you think that means?",
+                    q4: "Do you know about communities where people practice minimalism? What do you think the benefits of that lifestyle might be?",
+                    q5: "Have you ever heard of a community where people focus on wellness and healthy living? What do you think that would entail?",
+                    q6: "What are your thoughts on communities that prioritize creativity and artistic expression?",
+                    q7: "Have you ever heard of a community that practices co-living? What do you think that would be like?",
+                    q8: "What are your thoughts on communities that prioritize alternative forms of education or learning?",
+                    q9: "Have you ever heard of communities that focus on spirituality or mindfulness practices? What do you think that would involve?",
+                    q10: "What are your thoughts on communities that prioritize inclusivity and diversity in their lives and values?"
+                }, {
+                    id: "topic3",
+                    topic: "Education",
+                    description: "Education communities refer to groups of educators, students, and other stakeholders who come together to support and promote educational initiatives and innovations. These communities may be organized around specific subjects, grade levels, or educational philosophies, and they may exist both online and offline.",
+                    expand1: "Education communities can provide a range of benefits for educators and students alike. They may offer access to resources, training, and professional development opportunities, and they may also provide a forum for discussing and sharing best practices in teaching and learning.",
+                    expand2: "Education communities may also play a role in advocating for policies and practices that support student success and equity in education. They may collaborate with policymakers, advocates, and other stakeholders to promote educational innovations and reforms, and to address systemic challenges facing students and educators.",
+                    expand3: "Examples of education communities include teacher networks, student clubs, and parent-teacher associations. These communities may be organized around specific schools or districts, or they may span multiple regions or even countries.",
+                    src: "education.png",
+                    alt: "Students and a teacher sitting down at a table and learning",
+                    q1: "Are there any groups of people who regularly come together to learn new things and share their knowledge?",
+                    q2: "Do you know of any communities that prioritize continuous learning and development?",
+                    q3: "Are there any groups of people who are passionate about exploring new ideas and concepts together?",
+                    q4: "Have you heard of any communities that emphasize the importance of self-directed learning and teaching others?",
+                    q5: "Are there any groups of people who are dedicated to expanding their knowledge in a particular field or subject area?",
+                    q6: "Do you know of any communities that encourage members to share their expertise with others and collaborate on projects?",
+                    q7: "Have you come across any groups of people who are focused on building skills and gaining new insights through workshops and events?",
+                    q8: "Are there any communities that prioritize peer-to-peer learning and knowledge-sharing among members?",
+                    q9: "Have you heard of any groups that offer mentorship and support to those who are interested in learning more about a specific topic or field?",
+                    q10: "Do you know of any communities that are committed to helping others become more knowledgeable and informed in certain areas?"
+                }];
+
+            $( document ).ready(function() {
+                communityTopics();
+                const randomNumber = getRandomNumber();
+                if (randomNumber === 1) {
+                    $("#topic1").show();
+                    $("#topic2").hide();
+                    $("#topic3").hide();
+                } else if (randomNumber === 2) {
+                    $("#topic1").hide();
+                    $("#topic2").show();
+                    $("#topic3").hide();
+                } else {
+                    $("#topic1").hide();
+                    $("#topic2").hide();
+                    $("#topic3").show();
+                }
+
+                //get IDs #1
+                showBtn1 = document.getElementById("showTexttopic1");
+                hideBtn1 = document.getElementById("hideTexttopic1");
+                descriptions1 = document.getElementById("descriptionstopic1");
+                //load page #1
+                descriptions1.style.display = "none";
+                showBtn1.style.display = "block";
+                hideBtn1.style.display = "none";
+                //onclick #1
+                showBtn1.addEventListener("click", function() {
+                    descriptions1.style.display = "block";
+                    showBtn1.style.display = "none";
+                    hideBtn1.style.display = "block";
+                });
+                hideBtn1.addEventListener("click", function() {
+                    descriptions1.style.display = "none";
+                    showBtn1.style.display = "block";
+                    hideBtn1.style.display = "none";
+                });
+
+                //get IDs #2
+                showBtn2 = document.getElementById("showTexttopic2");
+                hideBtn2 = document.getElementById("hideTexttopic2");
+                descriptions2 = document.getElementById("descriptionstopic2");
+                //load page #2
+                descriptions2.style.display = "none";
+                showBtn2.style.display = "block";
+                hideBtn2.style.display = "none";
+                //onclick #2
+                showBtn2.addEventListener("click", function() {
+                    descriptions2.style.display = "block";
+                    showBtn2.style.display = "none";
+                    hideBtn2.style.display = "block";
+                });
+                hideBtn2.addEventListener("click", function() {
+                    descriptions2.style.display = "none";
+                    showBtn2.style.display = "block";
+                    hideBtn2.style.display = "none";
+                });
+
+                //get IDs #3
+                showBtn3 = document.getElementById("showTexttopic3");
+                hideBtn3 = document.getElementById("hideTexttopic3");
+                descriptions3 = document.getElementById("descriptionstopic3");
+                //load page #3
+                descriptions3.style.display = "none";
+                showBtn3.style.display = "block";
+                hideBtn3.style.display = "none";
+                //onclick #3
+                showBtn3.addEventListener("click", function() {
+                    descriptions3.style.display = "block";
+                    showBtn3.style.display = "none";
+                    hideBtn3.style.display = "block";
+                });
+                hideBtn3.addEventListener("click", function() {
+                    descriptions3.style.display = "none";
+                    showBtn3.style.display = "block";
+                    hideBtn3.style.display = "none";
+                });
+            });
+
+            function communityTopics() {
+                topicHTML = "";
+                myTopics.forEach(data => {
+                    topicHTML = topicHTML + '<div class="topic" id="' + data.id + '"><h4 class="intro">Learn about your type of community and then guess your partner\'s!</h4><div class="boxShadow"><div class="community"><h5>Your Community Topic</h5><h3>' + data.topic + ' Communities:</h3></div><p class="firstText">' + data.description + '</p><div id="descriptions' + data.id + '"><p>' + data.expand1 + '</p><p>' + data.expand2 + '</p><p>' + data.expand3 + '</p><p>' + data.expand4 + '</p></div><button id="showText' + data.id + '"><i class="fa-solid fa-circle-arrow-down"></i> Show More</button><button id="hideText' + data.id + '"><i class="fa-solid fa-circle-arrow-up"></i> Show Less</button></div><img class="descriptionIMG" src="img/' + data.src + '" alt="' + data.alt + '"><h4>Questions for your partner to guess your community!</h4><ol><li>' + data.q1 + '</li><li>' + data.q2 + '</li><li>' + data.q3 + '</li><li>' + data.q4 + '</li><li>' + data.q5 + '</li><li>' + data.q6 + '</li><li>' + data.q7 + '</li><li>' + data.q8 + '</li><li>' + data.q9 + '</li><li>' + data.q10 + '</li></ol></div>';
+                });
+                $("#topics").html(topicHTML);
+            }
+
+            function getRandomNumber() {
+                return Math.floor(Math.random() * 3) + 1;
+            }            
+        </script>
+    </body>
+</html>

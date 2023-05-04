@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flower Buds 6</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    </head>
+    <body>
+        <div class="header">
+            <div class="center">
+                <img src="img/logo.png" alt="Flower Buds logo">
+                <h1>flower buds</h1>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div id="topics"></div>
+
+        <script>
+            myTopics = [{
+                    id: "topic1",
+                    topic: "Technology",
+                    description: "Technology communities refer to groups of individuals who share an interest in technology and its application in various fields. These communities may be organized around specific technologies, such as artificial intelligence or blockchain, or they may encompass a broader range of technological interests and experiences.",
+                    expand1: "Technology communities can provide a range of benefits for individuals, including opportunities for social connection and support, as well as education and resources on emerging technologies and their impact on society. They may offer workshops, seminars, and hackathons, as well as access to mentorship and funding for technology startups.",
+                    expand2: "Technology communities may also play a role in promoting innovation and entrepreneurship, by fostering collaboration and knowledge-sharing among members. They may advocate for policies that promote technological development and support initiatives to promote technology education and access.",
+                    expand3: "Examples of technology communities include tech incubators, startup accelerators, and online technology forums. These communities may be organized around specific technologies or industries, or they may be focused on general technology-related topics, such as cybersecurity, data science, and software engineering.",
+                    src: "technology.png",
+                    alt: "Group of people working on their computers",
+                    q1: "Are you a part of any group that shares information and discussions related to computers, software or internet services?",
+                    q2: "Have you ever been part of an online community that talks about gadgets or new devices?",
+                    q3: "Have you heard about a community that is focused on discussing and sharing information about programming and coding?",
+                    q4: "Do you know of any groups that discuss how to use technology to improve people's lives or to solve environmental issues?",
+                    q5: "Have you ever been part of a community that helps people learn about digital marketing or social media management?",
+                    q6: "Have you heard of any groups that discuss the intersection of technology and the arts, such as virtual reality performances or digital music production?",
+                    q7: "Do you know of any communities that are focused on sharing information and discussing emerging trends and developments in the tech industry?",
+                    q8: "Have you ever been part of a group that shares information and strategies related to cybersecurity and online privacy?",
+                    q9: "Have you heard of any communities that bring together people interested in the use of technology for social activism and political change?",
+                    q10: "Do you know of any groups that are focused on sharing resources and support for women and other underrepresented groups in the tech industry?"
+                }, {
+                    id: "topic2",
+                    topic: "Rural",
+                    description: "Rural communities refer to groups of people who live and work in rural areas, which are typically characterized by low population density and dependence on agriculture and natural resources. Rural communities can be found throughout the world, from small towns and villages to remote farming and ranching communities.",
+                    expand1: "Rural communities face unique challenges, such as limited access to healthcare and education, as well as a lack of infrastructure and economic opportunities. However, they also offer a unique quality of life, with access to nature and a sense of community that is often absent in urban areas.",
+                    expand2: "Rural communities may organize around a range of issues, such as preserving local natural resources, supporting local businesses and agriculture, and advocating for policies that promote rural development and sustainability. They may also engage in cultural activities and events that celebrate local traditions and heritage.",
+                    expand3: "Examples of rural communities include farming communities, rural villages, and small towns. These communities may be organized around specific industries or interests, such as sustainable agriculture or outdoor recreation, or they may be focused on general rural-related topics, such as rural healthcare and education.",
+                    src: "rural.png",
+                    alt: "Three boys in a wheat field with a farm in the background",
+                    q1: "What is the size of the community you live in?",
+                    q2: "How would you describe the landscape of the area?",
+                    q3: "What are some of the common industries or jobs in the area?",
+                    q4: "What kind of activities or events are popular in the area?",
+                    q5: "How is the community involved in local governance and decision-making?",
+                    q6: "How do people in the community typically interact with one another?",
+                    q7: "Are there any unique traditions or cultural practices in the area?",
+                    q8: "What are some of the challenges that the community faces, and how do they address them?",
+                    q9: "How has the community changed over time, and what do you think will change in the future?",
+                    q10: "What do you appreciate most about living in a rural community?"
+                }, {
+                    id: "topic3",
+                    topic: "Spiritual",
+                    description: "Spiritual communities refer to groups of people who share a common set of beliefs, values, and practices related to spirituality or religion. These communities can be found throughout the world, and they often provide a sense of belonging, support, and guidance to their members.",
+                    expand1: "Spiritual communities can take many different forms, including churches, mosques, synagogues, temples, and other religious institutions. They may also exist outside of formal institutions, such as in the form of spiritual retreats, study groups, or meditation circles.",
+                    expand2: "Members of spiritual communities may come together to practice and celebrate their faith, participate in religious rituals and ceremonies, and engage in acts of service and charity. They may also share a sense of purpose and meaning, and seek to deepen their understanding of spiritual and ethical principles.",
+                    expand3: "Spiritual communities may organize around a range of issues, such as promoting peace and justice, environmental stewardship, and social justice. They may also engage in cultural activities and events that celebrate their traditions and heritage.",
+                    src: "spiritual.png",
+                    alt: "Group of people walking around a busy city",
+                    q1: "Have you ever been a part of a group that explores the deeper meanings and purposes of life?",
+                    q2: "Are you interested in learning about different religious practices and beliefs?",
+                    q3: "Have you ever been curious about meditation, mindfulness, or other contemplative practices?",
+                    q4: "Do you believe in the power of prayer, and have you ever participated in group prayer?",
+                    q5: "Are you looking for a community where you can share your beliefs and values with like-minded individuals?",
+                    q6: "Are you interested in exploring ways to connect with something greater than yourself?",
+                    q7: "Have you ever felt a sense of awe or wonder when contemplating the mysteries of the universe?",
+                    q8: "Are you interested in exploring questions of purpose, meaning, and ethics with others who share your interests?",
+                    q9: "Have you ever felt drawn to rituals or practices that connect you to something deeper within yourself or the world around you?",
+                    q10: "Are you looking for a community where you can explore your spiritual beliefs and practices in a supportive and open-minded environment?"
+                }];
+
+            $( document ).ready(function() {
+                communityTopics();
+                const randomNumber = getRandomNumber();
+                if (randomNumber === 1) {
+                    $("#topic1").show();
+                    $("#topic2").hide();
+                    $("#topic3").hide();
+                } else if (randomNumber === 2) {
+                    $("#topic1").hide();
+                    $("#topic2").show();
+                    $("#topic3").hide();
+                } else {
+                    $("#topic1").hide();
+                    $("#topic2").hide();
+                    $("#topic3").show();
+                }
+
+                //get IDs #1
+                showBtn1 = document.getElementById("showTexttopic1");
+                hideBtn1 = document.getElementById("hideTexttopic1");
+                descriptions1 = document.getElementById("descriptionstopic1");
+                //load page #1
+                descriptions1.style.display = "none";
+                showBtn1.style.display = "block";
+                hideBtn1.style.display = "none";
+                //onclick #1
+                showBtn1.addEventListener("click", function() {
+                    descriptions1.style.display = "block";
+                    showBtn1.style.display = "none";
+                    hideBtn1.style.display = "block";
+                });
+                hideBtn1.addEventListener("click", function() {
+                    descriptions1.style.display = "none";
+                    showBtn1.style.display = "block";
+                    hideBtn1.style.display = "none";
+                });
+
+                //get IDs #2
+                showBtn2 = document.getElementById("showTexttopic2");
+                hideBtn2 = document.getElementById("hideTexttopic2");
+                descriptions2 = document.getElementById("descriptionstopic2");
+                //load page #2
+                descriptions2.style.display = "none";
+                showBtn2.style.display = "block";
+                hideBtn2.style.display = "none";
+                //onclick #2
+                showBtn2.addEventListener("click", function() {
+                    descriptions2.style.display = "block";
+                    showBtn2.style.display = "none";
+                    hideBtn2.style.display = "block";
+                });
+                hideBtn2.addEventListener("click", function() {
+                    descriptions2.style.display = "none";
+                    showBtn2.style.display = "block";
+                    hideBtn2.style.display = "none";
+                });
+
+                //get IDs #3
+                showBtn3 = document.getElementById("showTexttopic3");
+                hideBtn3 = document.getElementById("hideTexttopic3");
+                descriptions3 = document.getElementById("descriptionstopic3");
+                //load page #3
+                descriptions3.style.display = "none";
+                showBtn3.style.display = "block";
+                hideBtn3.style.display = "none";
+                //onclick #3
+                showBtn3.addEventListener("click", function() {
+                    descriptions3.style.display = "block";
+                    showBtn3.style.display = "none";
+                    hideBtn3.style.display = "block";
+                });
+                hideBtn3.addEventListener("click", function() {
+                    descriptions3.style.display = "none";
+                    showBtn3.style.display = "block";
+                    hideBtn3.style.display = "none";
+                });
+            });
+
+            function communityTopics() {
+                topicHTML = "";
+                myTopics.forEach(data => {
+                    topicHTML = topicHTML + '<div class="topic" id="' + data.id + '"><h4 class="intro">Learn about your type of community and then guess your partner\'s!</h4><div class="boxShadow"><div class="community"><h5>Your Community Topic</h5><h3>' + data.topic + ' Communities:</h3></div><p class="firstText">' + data.description + '</p><div id="descriptions' + data.id + '"><p>' + data.expand1 + '</p><p>' + data.expand2 + '</p><p>' + data.expand3 + '</p></div><button id="showText' + data.id + '"><i class="fa-solid fa-circle-arrow-down"></i> Show More</button><button id="hideText' + data.id + '"><i class="fa-solid fa-circle-arrow-up"></i> Show Less</button></div><img class="descriptionIMG" src="img/' + data.src + '" alt="' + data.alt + '"><h4>Questions for your partner to guess your community!</h4><ol><li>' + data.q1 + '</li><li>' + data.q2 + '</li><li>' + data.q3 + '</li><li>' + data.q4 + '</li><li>' + data.q5 + '</li><li>' + data.q6 + '</li><li>' + data.q7 + '</li><li>' + data.q8 + '</li><li>' + data.q9 + '</li><li>' + data.q10 + '</li></ol></div>';
+                });
+                $("#topics").html(topicHTML);
+            }
+
+            function getRandomNumber() {
+                return Math.floor(Math.random() * 3) + 1;
+            }            
+        </script>
+    </body>
+</html>

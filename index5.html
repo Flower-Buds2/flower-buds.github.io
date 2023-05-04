@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flower Buds 5</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    </head>
+    <body>
+        <div class="header">
+            <div class="center">
+                <img src="img/logo.png" alt="Flower Buds logo">
+                <h1>flower buds</h1>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div id="topics"></div>
+
+        <script>
+            myTopics = [{
+                    id: "topic1",
+                    topic: "Pet",
+                    description: "Pet communities refer to groups of individuals who share a love and passion for pets. These communities may be organized around specific types of pets, such as dogs or cats, or they may encompass a broader range of pets and animal lovers.",
+                    expand1: "Pet communities can provide a range of benefits for individuals, including opportunities for social connection and support, as well as education and resources on pet care and animal welfare. They may offer pet-friendly events and activities, pet adoption services, and educational programs on animal behaviour and training.",
+                    expand2: "Pet communities may also play a role in promoting responsible pet ownership and animal welfare, by advocating for animal rights and supporting animal rescue and rehabilitation efforts.",
+                    expand3: "Examples of pet communities include pet clubs, animal rescue organizations, and online pet forums. These communities may be organized around specific breeds or types of pets, or they may be focused on general pet-related topics, such as training, health, and nutrition.",
+                    src: "pet.png",
+                    alt: "A family petting their family dog",
+                    q1: "Have you ever been part of a community that is focused on a particular type of animal?",
+                    q2: "Do you know of any groups that are dedicated to the conservation or protection of certain species of animals?",
+                    q3: "Have you heard of any organizations that provide care and shelter for animals in need?",
+                    q4: "Are there any groups in your area that organize events or activities centred around animals?",
+                    q5: "Have you ever volunteered for or donated to an animal-related cause or group?",
+                    q6: "Are there any communities that promote animal-friendly lifestyles or advocate for animal rights?",
+                    q7: "Have you heard of any clubs or organizations that train animals for specific purposes, such as service animals or working animals?",
+                    q8: "Do you know of any online forums or groups where people can share information and advice about caring for animals?",
+                    q9: "Have you ever attended a conference or workshop related to animal welfare or animal-related issues?",
+                    q10: "Are there any communities that focus on the relationship between humans and animals, such as therapy animal programs or programs that connect animals with seniors or children?"
+                }, {
+                    id: "topic2",
+                    topic: "Culinary",
+                    description: "Culinary communities refer to groups of individuals who share a passion for food and cooking. These communities may be organized around specific types of cuisine, such as Italian or Mexican, or they may encompass a broader range of culinary interests and experiences.",
+                    expand1: "Culinary communities can provide a range of benefits for individuals, including opportunities for social connection and support, as well as education and resources on cooking techniques and food culture. They may offer cooking classes and workshops, food and wine tastings, and educational programs on sustainable and ethical food practices.",
+                    expand2: "Culinary communities may also play a role in promoting cultural understanding and diversity, by fostering cross-cultural communication and collaboration around food and cooking. They may advocate for food justice and support local food producers and farmers.",
+                    expand3: "Examples of culinary communities include cooking clubs, food blogs and online forums, and culinary schools. These communities may be organized around specific culinary interests or cultural identities, or they may be focused on general food-related topics, such as nutrition, culinary history, and cooking techniques.",
+                    src: "culinary.png",
+                    alt: "Friends cooking a meal together",
+                    q1: "Have you ever been part of a group that shares recipes or cooking tips online or in person?",
+                    q2: "Have you ever heard of a community that focuses on a specific type of cuisine, such as Italian or Mexican?",
+                    q3: "Have you ever attended a food festival or event that celebrates a particular type of cuisine or cooking style?",
+                    q4: "Have you ever participated in a cooking competition or challenge with others online or in person?",
+                    q5: "Have you ever subscribed to a food magazine or followed a food blog or social media account that features recipes and cooking inspiration?",
+                    q6: "Have you ever taken a cooking class or attended a workshop on a particular cooking technique or cuisine?",
+                    q7: "Have you ever joined a community that focuses on sustainable or ethical food practices, such as vegetarian or vegan cooking?",
+                    q8: "Have you ever volunteered or participated in a community garden or urban farming project that focuses on growing food for the community?",
+                    q9: "Have you ever participated in a food swap or potluck with others who share a passion for cooking and trying new foods?",
+                    q10: "Have you ever travelled to a particular region or country to learn about its cuisine and cooking traditions?"
+                }, {
+                    id: "topic3",
+                    topic: "Music",
+                    description: "Music communities refer to groups of individuals who share a love and passion for music. These communities may be organized around specific genres of music, such as rock or jazz, or they may encompass a broader range of musical styles and interests.",
+                    expand1: "Music communities can provide a range of benefits for individuals, including opportunities for social connection and support, as well as education and resources on music theory, performance, and production. They may offer music lessons, workshops, and master classes, as well as access to recording studios, music equipment, and performance venues.",
+                    expand2: "Music communities may also play a role in promoting cultural understanding and diversity, by fostering cross-cultural communication and collaboration around music. They may advocate for music education and support policies that promote access to music for all.",
+                    expand3: "Examples of music communities include music clubs, music schools, and online music forums. These communities may be organized around specific genres or types of music, or they may be focused on general music-related topics, such as composition, performance, and recording.",
+                    src: "music.png",
+                    alt: "Group of people playing instruments and making music",
+                    q1: "Are you interested in connecting with others who share your passion for creating and listening to sounds?",
+                    q2: "Would you like to learn more about the art of rhythm and melody?",
+                    q3: "Are you curious about collaborating with others to produce new sounds or remix existing ones?",
+                    q4: "Do you enjoy attending concerts and festivals featuring diverse musical styles?",
+                    q5: "Are you looking for a community that values experimentation, improvisation, and expression through sound?",
+                    q6: "Would you like to explore the cultural and historical contexts of different musical genres?",
+                    q7: "Are you seeking a supportive environment to develop your skills as a performer, producer, or composer?",
+                    q8: "Do you want to share your knowledge and experience with others who are just starting to explore the world of music?",
+                    q9: "Are you interested in using music as a tool for social change and activism?",
+                    q10: "Would you like to discover new ways to incorporate music into your daily life and routines?"
+                }];
+
+            $( document ).ready(function() {
+                communityTopics();
+                const randomNumber = getRandomNumber();
+                if (randomNumber === 1) {
+                    $("#topic1").show();
+                    $("#topic2").hide();
+                    $("#topic3").hide();
+                } else if (randomNumber === 2) {
+                    $("#topic1").hide();
+                    $("#topic2").show();
+                    $("#topic3").hide();
+                } else {
+                    $("#topic1").hide();
+                    $("#topic2").hide();
+                    $("#topic3").show();
+                }
+
+                //get IDs #1
+                showBtn1 = document.getElementById("showTexttopic1");
+                hideBtn1 = document.getElementById("hideTexttopic1");
+                descriptions1 = document.getElementById("descriptionstopic1");
+                //load page #1
+                descriptions1.style.display = "none";
+                showBtn1.style.display = "block";
+                hideBtn1.style.display = "none";
+                //onclick #1
+                showBtn1.addEventListener("click", function() {
+                    descriptions1.style.display = "block";
+                    showBtn1.style.display = "none";
+                    hideBtn1.style.display = "block";
+                });
+                hideBtn1.addEventListener("click", function() {
+                    descriptions1.style.display = "none";
+                    showBtn1.style.display = "block";
+                    hideBtn1.style.display = "none";
+                });
+
+                //get IDs #2
+                showBtn2 = document.getElementById("showTexttopic2");
+                hideBtn2 = document.getElementById("hideTexttopic2");
+                descriptions2 = document.getElementById("descriptionstopic2");
+                //load page #2
+                descriptions2.style.display = "none";
+                showBtn2.style.display = "block";
+                hideBtn2.style.display = "none";
+                //onclick #2
+                showBtn2.addEventListener("click", function() {
+                    descriptions2.style.display = "block";
+                    showBtn2.style.display = "none";
+                    hideBtn2.style.display = "block";
+                });
+                hideBtn2.addEventListener("click", function() {
+                    descriptions2.style.display = "none";
+                    showBtn2.style.display = "block";
+                    hideBtn2.style.display = "none";
+                });
+
+                //get IDs #3
+                showBtn3 = document.getElementById("showTexttopic3");
+                hideBtn3 = document.getElementById("hideTexttopic3");
+                descriptions3 = document.getElementById("descriptionstopic3");
+                //load page #3
+                descriptions3.style.display = "none";
+                showBtn3.style.display = "block";
+                hideBtn3.style.display = "none";
+                //onclick #3
+                showBtn3.addEventListener("click", function() {
+                    descriptions3.style.display = "block";
+                    showBtn3.style.display = "none";
+                    hideBtn3.style.display = "block";
+                });
+                hideBtn3.addEventListener("click", function() {
+                    descriptions3.style.display = "none";
+                    showBtn3.style.display = "block";
+                    hideBtn3.style.display = "none";
+                });
+            });
+
+            function communityTopics() {
+                topicHTML = "";
+                myTopics.forEach(data => {
+                    topicHTML = topicHTML + '<div class="topic" id="' + data.id + '"><h4 class="intro">Learn about your type of community and then guess your partner\'s!</h4><div class="boxShadow"><div class="community"><h5>Your Community Topic</h5><h3>' + data.topic + ' Communities:</h3></div><p class="firstText">' + data.description + '</p><div id="descriptions' + data.id + '"><p>' + data.expand1 + '</p><p>' + data.expand2 + '</p><p>' + data.expand3 + '</p></div><button id="showText' + data.id + '"><i class="fa-solid fa-circle-arrow-down"></i> Show More</button><button id="hideText' + data.id + '"><i class="fa-solid fa-circle-arrow-up"></i> Show Less</button></div><img class="descriptionIMG" src="img/' + data.src + '" alt="' + data.alt + '"><h4>Questions for your partner to guess your community!</h4><ol><li>' + data.q1 + '</li><li>' + data.q2 + '</li><li>' + data.q3 + '</li><li>' + data.q4 + '</li><li>' + data.q5 + '</li><li>' + data.q6 + '</li><li>' + data.q7 + '</li><li>' + data.q8 + '</li><li>' + data.q9 + '</li><li>' + data.q10 + '</li></ol></div>';
+                });
+                $("#topics").html(topicHTML);
+            }
+
+            function getRandomNumber() {
+                return Math.floor(Math.random() * 3) + 1;
+            }            
+        </script>
+    </body>
+</html>

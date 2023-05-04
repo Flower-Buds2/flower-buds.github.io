@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flower Buds 7</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    </head>
+    <body>
+        <div class="header">
+            <div class="center">
+                <img src="img/logo.png" alt="Flower Buds logo">
+                <h1>flower buds</h1>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div id="topics"></div>
+
+        <script>
+            myTopics = [{
+                    id: "topic1",
+                    topic: "Urban",
+                    description: "Urban communities refer to groups of people who live and work in densely populated urban areas, typically characterized by high levels of diversity and cultural exchange. Urban communities can be found throughout the world, from large metropolises to smaller cities and urban neighbourhoods.",
+                    expand1: "Urban communities face unique challenges, such as limited space and resources, as well as issues related to infrastructure, transportation, and housing. However, they also offer a wide range of opportunities for social and cultural engagement, as well as access to a diverse range of economic, educational, and cultural resources.",
+                    expand2: "Urban communities may organize around a range of issues, such as affordable housing, community safety, and access to public transportation. They may also engage in cultural activities and events that celebrate local traditions and heritage, as well as promote diversity and inclusivity.",
+                    expand3: "Examples of urban communities include diverse neighbourhoods, cultural centers, and business districts. These communities may be organized around specific industries or interests, such as technology or the arts, or they may be focused on general urban-related topics, such as urban planning and sustainability.",
+                    src: "urban.png",
+                    alt: "A woman in a blue dress speaking to a large crowd of people",
+                    q1: "Have you ever lived in a city before? If so, what did you enjoy most about it?",
+                    q2: "Are you familiar with any big cities around the world? Which ones come to mind?",
+                    q3: "Have you ever been to a city that felt very different from what you're used to? What stood out to you about it?",
+                    q4: "What are some of the first things that come to mind when you think of a city?",
+                    q5: "What do you think are some of the biggest challenges that urban communities face?",
+                    q6: "Have you ever heard of urban planning? What do you think it involves?",
+                    q7: "How do you think cities are different from smaller towns or rural areas in terms of culture and lifestyle?",
+                    q8: "Have you ever visited a city that felt very welcoming to visitors? What made you feel that way?",
+                    q9: "Do you think living in a city is a good fit for everyone? Why or why not?",
+                    q10: "How do you think urban communities can work to become more sustainable and environmentally friendly?"
+                }, {
+                    id: "topic2",
+                    topic: "Support",
+                    description: "Support communities refer to groups of people who come together to provide emotional, social, or practical support to one another. These communities can take many different forms, ranging from formal support groups to informal networks of friends and family.",
+                    expand1: "Support communities may be organized around a range of issues, such as mental health, addiction, chronic illness, or caregiving. They may also be focused on more general topics, such as grief and loss, or personal growth and development.",
+                    expand2: "Members of support communities may offer one another a range of different types of support, such as listening, advice, encouragement, and practical assistance. They may also share their own experiences and insights, and draw strength from their shared sense of purpose and connection.",
+                    expand3: "Support communities may be facilitated by trained professionals, such as therapists or social workers, or they may be led by volunteers or peers who have personal experience with the issues being addressed.",
+                    src: "support.png",
+                    alt: "Group of people with their backs turned to the camera and their arms around each other",
+                    q1: "What kind of activities or events does the community typically organize?",
+                    q2: "Are there any particular issues or causes that the community is passionate about?",
+                    q3: "What kind of people tend to be members of the community?",
+                    q4: "What is the community's history and how did it come to be?",
+                    q5: "What kind of benefits or advantages are there to being part of the community?",
+                    q6: "What kind of outreach or involvement does the community have with the broader community?",
+                    q7: "Are there any specific values or beliefs that the community emphasizes?",
+                    q8: "What kind of resources or support does the community offer its members?",
+                    q9: "Are there any notable members or leaders of the community that are worth mentioning?",
+                    q10: "What kind of impact or influence has the community had on the surrounding area or society at large?"
+                }, {
+                    id: "topic3",
+                    topic: "Interest-Based",
+                    description: "Interest-based communities refer to groups of people who come together based on shared interests, hobbies, or passions. These communities can take many different forms, ranging from online forums and social media groups to in-person clubs and organizations.",
+                    expand1: "Interest-based communities may be organized around a wide range of topics, such as sports, arts and crafts, travel, cooking, gaming, or technology. They may also be focused on more niche interests, such as birdwatching, book clubs, or cosplay.",
+                    expand2: "Members of interest-based communities may come together to share their knowledge and skills, collaborate on projects, or simply enjoy each other's company while pursuing their shared interests. They may also organize events, outings, or competitions that allow them to connect and share their passions.",
+                    expand3: "Interest-based communities may be organized and led by volunteers, or they may be supported by businesses or other organizations that share their focus. They may also be supported by a range of resources, such as books, websites, and magazines that offer guidance and inspiration to their members.",
+                    src: "interest.png",
+                    alt: "Group of people getting ready to ride their bikes",
+                    q1: "Can you tell me about any groups of people who share a common hobby or activity in your area?",
+                    q2: "Are there any clubs or organizations that people join based on their shared interests?",
+                    q3: "Have you heard of any gatherings or events where people come together to celebrate a shared passion or activity?",
+                    q4: "Are there any online communities that revolve around a particular hobby or interest?",
+                    q5: "Have you come across any social media pages or groups dedicated to a specific pastime or activity?",
+                    q6: "Do you know of any forums or message boards where people discuss a shared hobby or interest?",
+                    q7: "Are there any magazines or publications that focus on a particular hobby or interest, and do they have an associated community?",
+                    q8: "Have you ever attended a meetup or event focused on a specific interest or hobby, and what was your experience like?",
+                    q9: "Are there any niche communities that you have come across that revolve around a specific topic or interest?",
+                    q10: "Do you know of any communities that are organized around a particular type of media, such as books, movies, or video games?"
+                }];
+
+            $( document ).ready(function() {
+                communityTopics();
+                const randomNumber = getRandomNumber();
+                if (randomNumber === 1) {
+                    $("#topic1").show();
+                    $("#topic2").hide();
+                    $("#topic3").hide();
+                } else if (randomNumber === 2) {
+                    $("#topic1").hide();
+                    $("#topic2").show();
+                    $("#topic3").hide();
+                } else {
+                    $("#topic1").hide();
+                    $("#topic2").hide();
+                    $("#topic3").show();
+                }
+
+                //get IDs #1
+                showBtn1 = document.getElementById("showTexttopic1");
+                hideBtn1 = document.getElementById("hideTexttopic1");
+                descriptions1 = document.getElementById("descriptionstopic1");
+                //load page #1
+                descriptions1.style.display = "none";
+                showBtn1.style.display = "block";
+                hideBtn1.style.display = "none";
+                //onclick #1
+                showBtn1.addEventListener("click", function() {
+                    descriptions1.style.display = "block";
+                    showBtn1.style.display = "none";
+                    hideBtn1.style.display = "block";
+                });
+                hideBtn1.addEventListener("click", function() {
+                    descriptions1.style.display = "none";
+                    showBtn1.style.display = "block";
+                    hideBtn1.style.display = "none";
+                });
+
+                //get IDs #2
+                showBtn2 = document.getElementById("showTexttopic2");
+                hideBtn2 = document.getElementById("hideTexttopic2");
+                descriptions2 = document.getElementById("descriptionstopic2");
+                //load page #2
+                descriptions2.style.display = "none";
+                showBtn2.style.display = "block";
+                hideBtn2.style.display = "none";
+                //onclick #2
+                showBtn2.addEventListener("click", function() {
+                    descriptions2.style.display = "block";
+                    showBtn2.style.display = "none";
+                    hideBtn2.style.display = "block";
+                });
+                hideBtn2.addEventListener("click", function() {
+                    descriptions2.style.display = "none";
+                    showBtn2.style.display = "block";
+                    hideBtn2.style.display = "none";
+                });
+
+                //get IDs #3
+                showBtn3 = document.getElementById("showTexttopic3");
+                hideBtn3 = document.getElementById("hideTexttopic3");
+                descriptions3 = document.getElementById("descriptionstopic3");
+                //load page #3
+                descriptions3.style.display = "none";
+                showBtn3.style.display = "block";
+                hideBtn3.style.display = "none";
+                //onclick #3
+                showBtn3.addEventListener("click", function() {
+                    descriptions3.style.display = "block";
+                    showBtn3.style.display = "none";
+                    hideBtn3.style.display = "block";
+                });
+                hideBtn3.addEventListener("click", function() {
+                    descriptions3.style.display = "none";
+                    showBtn3.style.display = "block";
+                    hideBtn3.style.display = "none";
+                });
+            });
+
+            function communityTopics() {
+                topicHTML = "";
+                myTopics.forEach(data => {
+                    topicHTML = topicHTML + '<div class="topic" id="' + data.id + '"><h4 class="intro">Learn about your type of community and then guess your partner\'s!</h4><div class="boxShadow"><div class="community"><h5>Your Community Topic</h5><h3>' + data.topic + ' Communities:</h3></div><p class="firstText">' + data.description + '</p><div id="descriptions' + data.id + '"><p>' + data.expand1 + '</p><p>' + data.expand2 + '</p><p>' + data.expand3 + '</p></div><button id="showText' + data.id + '"><i class="fa-solid fa-circle-arrow-down"></i> Show More</button><button id="hideText' + data.id + '"><i class="fa-solid fa-circle-arrow-up"></i> Show Less</button></div><img class="descriptionIMG" src="img/' + data.src + '" alt="' + data.alt + '"><h4>Questions for your partner to guess your community!</h4><ol><li>' + data.q1 + '</li><li>' + data.q2 + '</li><li>' + data.q3 + '</li><li>' + data.q4 + '</li><li>' + data.q5 + '</li><li>' + data.q6 + '</li><li>' + data.q7 + '</li><li>' + data.q8 + '</li><li>' + data.q9 + '</li><li>' + data.q10 + '</li></ol></div>';
+                });
+                $("#topics").html(topicHTML);
+            }
+
+            function getRandomNumber() {
+                return Math.floor(Math.random() * 3) + 1;
+            }            
+        </script>
+    </body>
+</html>

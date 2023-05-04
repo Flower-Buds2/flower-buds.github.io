@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flower Buds 4</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    </head>
+    <body>
+        <div class="header">
+            <div class="center">
+                <img src="img/logo.png" alt="Flower Buds logo">
+                <h1>flower buds</h1>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div id="topics"></div>
+
+        <script>
+            myTopics = [{
+                    id: "topic1",
+                    topic: "Immigrant",
+                    description: "Immigrant communities refer to groups of individuals who have migrated from one country to another and who share a common cultural identity or heritage. These communities may be organized around language, religion, or other cultural traditions, and they may exist within larger societies or in diaspora communities around the world.",
+                    expand1: "Immigrant communities can provide a range of benefits for individuals, including social support, cultural preservation, and access to resources and opportunities. They may offer a space for individuals to connect with others who share their cultural background and to maintain important cultural traditions and practices.",
+                    expand2: "Immigrant communities may also play a role in promoting social and economic integration for new immigrants, by providing language and job training, access to social services, and other forms of support. They may advocate for policies and practices that support immigrant rights and promote social inclusion.",
+                    expand3: "Examples of immigrant communities include ethnic enclaves, community organizations, and cultural centers. These communities may be organized around specific cultural identities, such as Chinese or Mexican, or they may encompass a range of immigrant experiences and identities.",
+                    src: "immigrant.png",
+                    alt: "Different people walking around a globe",
+                    q1: "Can you tell me about a community that is primarily made up of people who have moved here from other countries?",
+                    q2: "Have you ever encountered a group of people who share a common cultural background or language different from the majority in the area?",
+                    q3: "Do you know of any neighbourhoods or areas where different cultural traditions are prominently displayed?",
+                    q4: "Have you ever experienced or witnessed any discrimination against people from other countries?",
+                    q5: "Are there any businesses or organizations in your area that cater specifically to people from different countries or cultural backgrounds?",
+                    q6: "Are there any notable events or festivals that celebrate the diversity of the community?",
+                    q7: "Have you noticed any changes in the community due to an influx of people from other countries? If so, what are they?",
+                    q8: "Do you think it's important for communities to welcome people from other countries and celebrate their cultural differences? Why or why not?",
+                    q9: "Have you ever had the opportunity to learn about or participate in a cultural exchange program with people from other countries?",
+                    q10: "How do you think the presence of people from different countries and cultural backgrounds enriches a community?"
+                }, {
+                    id: "topic2",
+                    topic: "Travel",
+                    description: "Travel communities refer to groups of individuals who share a passion for travel and exploration. These communities may be organized around specific types of travel, such as adventure travel or cultural tourism, or they may encompass a broader range of travel experiences and interests.",
+                    expand1: "Travel communities can provide a range of benefits for individuals, including opportunities for cultural exchange, personal growth, and social connection. They may offer access to travel resources, including information on destinations, transportation, and accommodations, as well as travel discounts and deals.",
+                    expand2: "Travel communities may also play a role in promoting responsible and sustainable travel practices, by advocating for environmental and cultural preservation and supporting local communities and economies.",
+                    expand3: "Examples of travel communities include travel bloggers, travel groups, and online travel forums. These communities may be organized around specific travel interests, such as backpacking or luxury travel, or they may encompass a range of travel styles and experiences.",
+                    src: "travel.png",
+                    alt: "Group of tourists looking around a new city",
+                    q1: "Have you ever connected with a group of people who share a passion for exploring new places?",
+                    q2: "Have you ever joined an online community focused on visiting specific destinations or types of trips?",
+                    q3: "Have you ever connected with other travellers to share tips, advice, and stories about your experiences on the road?",
+                    q4: "Have you ever participated in a cultural exchange program that connects travellers with locals in the places they're visiting?",
+                    q5: "Have you ever attended an event or festival that celebrates travel, adventure, and exploration?",
+                    q6: "Have you ever been a part of a community that encourages sustainable and responsible tourism practices?",
+                    q7: "Have you ever been a member of a group that organizes group trips or tours for like-minded travellers?",
+                    q8: "Have you ever volunteered with a community that supports travellers in need, such as backpackers or stranded tourists?",
+                    q9: "Have you ever followed a travel influencer or blogger who is part of a larger travel community?",
+                    q10: "Have you ever participated in a language exchange program that connects travellers with local speakers of the language they're trying to learn?"
+                }, {
+                    id: "topic3",
+                    topic: "Language",
+                    description: "Language communities refer to groups of individuals who share a common language or languages. These communities may be organized around a particular language, such as English, Spanish, or Mandarin, or they may encompass a range of languages spoken within a particular region or culture.",
+                    expand1: "Language communities can provide a range of benefits for individuals, including opportunities for language learning and cultural exchange, as well as social connection and support. They may offer language classes, conversation groups, and cultural events and activities, as well as access to language resources, including books, audio recordings, and online tools.",
+                    expand2: "Language communities may also play a role in promoting cultural understanding and diversity, by fostering cross-cultural communication and collaboration. They may advocate for language education and support policies that promote multilingualism and linguistic diversity.",
+                    expand3: "Examples of language communities include language schools, cultural centers, and language exchange programs. These communities may be organized around specific geographic areas or cultural identities, or they may be virtual communities that exist online.",
+                    src: "language.png",
+                    alt: "People on a blue background speaking different languages",
+                    q1: "Are there any groups of people who share a common way of communicating with each other?",
+                    q2: "Do you know of any communities where people speak a particular dialect or accent?",
+                    q3: "Are there any groups that share a specific way of expressing themselves through nonverbal communication?",
+                    q4: "Have you ever heard of a community where people use specific jargon or slang?",
+                    q5: "Is there a group that uses a particular set of expressions or idioms that are unique to them?",
+                    q6: "Have you come across any communities that communicate through a particular form of art or music?",
+                    q7: "Are there any groups that have a distinct way of communicating with each other through gestures or body language?",
+                    q8: "Do you know of any communities that have a shared understanding of symbols or signs that convey meaning?",
+                    q9: "Are there any groups that have a common way of expressing themselves through fashion or style?",
+                    q10: "Have you heard of any communities where people communicate through a specific mode, such as sign language or Braille?"
+                }];
+
+            $( document ).ready(function() {
+                communityTopics();
+                const randomNumber = getRandomNumber();
+                if (randomNumber === 1) {
+                    $("#topic1").show();
+                    $("#topic2").hide();
+                    $("#topic3").hide();
+                } else if (randomNumber === 2) {
+                    $("#topic1").hide();
+                    $("#topic2").show();
+                    $("#topic3").hide();
+                } else {
+                    $("#topic1").hide();
+                    $("#topic2").hide();
+                    $("#topic3").show();
+                }
+
+                //get IDs #1
+                showBtn1 = document.getElementById("showTexttopic1");
+                hideBtn1 = document.getElementById("hideTexttopic1");
+                descriptions1 = document.getElementById("descriptionstopic1");
+                //load page #1
+                descriptions1.style.display = "none";
+                showBtn1.style.display = "block";
+                hideBtn1.style.display = "none";
+                //onclick #1
+                showBtn1.addEventListener("click", function() {
+                    descriptions1.style.display = "block";
+                    showBtn1.style.display = "none";
+                    hideBtn1.style.display = "block";
+                });
+                hideBtn1.addEventListener("click", function() {
+                    descriptions1.style.display = "none";
+                    showBtn1.style.display = "block";
+                    hideBtn1.style.display = "none";
+                });
+
+                //get IDs #2
+                showBtn2 = document.getElementById("showTexttopic2");
+                hideBtn2 = document.getElementById("hideTexttopic2");
+                descriptions2 = document.getElementById("descriptionstopic2");
+                //load page #2
+                descriptions2.style.display = "none";
+                showBtn2.style.display = "block";
+                hideBtn2.style.display = "none";
+                //onclick #2
+                showBtn2.addEventListener("click", function() {
+                    descriptions2.style.display = "block";
+                    showBtn2.style.display = "none";
+                    hideBtn2.style.display = "block";
+                });
+                hideBtn2.addEventListener("click", function() {
+                    descriptions2.style.display = "none";
+                    showBtn2.style.display = "block";
+                    hideBtn2.style.display = "none";
+                });
+
+                //get IDs #3
+                showBtn3 = document.getElementById("showTexttopic3");
+                hideBtn3 = document.getElementById("hideTexttopic3");
+                descriptions3 = document.getElementById("descriptionstopic3");
+                //load page #3
+                descriptions3.style.display = "none";
+                showBtn3.style.display = "block";
+                hideBtn3.style.display = "none";
+                //onclick #3
+                showBtn3.addEventListener("click", function() {
+                    descriptions3.style.display = "block";
+                    showBtn3.style.display = "none";
+                    hideBtn3.style.display = "block";
+                });
+                hideBtn3.addEventListener("click", function() {
+                    descriptions3.style.display = "none";
+                    showBtn3.style.display = "block";
+                    hideBtn3.style.display = "none";
+                });
+            });
+
+            function communityTopics() {
+                topicHTML = "";
+                myTopics.forEach(data => {
+                    topicHTML = topicHTML + '<div class="topic" id="' + data.id + '"><h4 class="intro">Learn about your type of community and then guess your partner\'s!</h4><div class="boxShadow"><div class="community"><h5>Your Community Topic</h5><h3>' + data.topic + ' Communities:</h3></div><p class="firstText">' + data.description + '</p><div id="descriptions' + data.id + '"><p>' + data.expand1 + '</p><p>' + data.expand2 + '</p><p>' + data.expand3 + '</p></div><button id="showText' + data.id + '"><i class="fa-solid fa-circle-arrow-down"></i> Show More</button><button id="hideText' + data.id + '"><i class="fa-solid fa-circle-arrow-up"></i> Show Less</button></div><img class="descriptionIMG" src="img/' + data.src + '" alt="' + data.alt + '"><h4>Questions for your partner to guess your community!</h4><ol><li>' + data.q1 + '</li><li>' + data.q2 + '</li><li>' + data.q3 + '</li><li>' + data.q4 + '</li><li>' + data.q5 + '</li><li>' + data.q6 + '</li><li>' + data.q7 + '</li><li>' + data.q8 + '</li><li>' + data.q9 + '</li><li>' + data.q10 + '</li></ol></div>';
+                });
+                $("#topics").html(topicHTML);
+            }
+
+            function getRandomNumber() {
+                return Math.floor(Math.random() * 3) + 1;
+            }            
+        </script>
+    </body>
+</html>
